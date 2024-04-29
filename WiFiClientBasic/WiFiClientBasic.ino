@@ -24,6 +24,7 @@ void setup()
     Serial.println("WiFi connected");
     Serial.println("IP address: ");
     Serial.println(WiFi.localIP());
+    
 
     delay(500);
 }
@@ -54,6 +55,10 @@ void loop()
     client.print("Dados para o Servidor.\n");
     //uncomment this line to send a basic document request to the server
     client.print("GET /ESP HTTP/1.1\n\n");
+    int n = WiFi.scanNetworks();
+    Serial.println(WiFi.SSID(0).c_str());
+    Serial.println(WiFi.RSSI(0));
+
 
   int maxloops = 0;
 
